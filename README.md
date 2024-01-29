@@ -3,7 +3,7 @@ Repositório criado para exercícios e anotações de SQL
 
 ## Introdução ao BD
 **"Data is the new oil"**.
-O banco de dados é um lugar utiizado para armazenar e extrair dados.
+<p>O banco de dados é um lugar utiizado para armazenar e extrair dados.</p>
 A lingueM **SQL é muito utilizada para manipulação de bancos de dados.
 Recomendação de Documentários -  **Privacidade Hackeada** e **O dilema das redes**.
 
