@@ -47,9 +47,45 @@ Modelar é criar formas visuais qeu representam a estrutura lógica de funcionam
 Organiza os dados em uma Tabela
 
 ### DER - Diagrama de entidade e relacionamento 
-Organiza os dados em forma de diagrmas
+Organiza os dados em forma de diagramas
 
+Entidades fortes: Não dependem de outras entidades para existir 
+Entidades fracas: Dependem de outra entidade para existir, como subclasses
 
+Existem três tipos de diagramas:
+* Conceitual
+* Lógica 
+
+### Modelo conceitual
+Apresenta apenas os **atributos, ligações e a cardinalidade**.
+
+#### Cardinalidade 
+Representa a quantidade de vezes que um entidade pode estar sendo associado em um dado especfico 
+
+#### Generalização e Especialização 
+Uma entidade pode ser generalizada (Usando o triangulo), ou especializada dentro de um fluxgrama 
+
+### Modelagem lógica
+#### Chave primaria - Primary Key (PK)
+Primary key é utlizado para identificação unica de uma entidade, Ex; ID
+
+#### Chave estrangeira - foreign key(FK)
+Foreign key é utilizado para relacionar duas tabelas diferntes
+
+#### Cardinalidade 
+* Zero ou um 
+* Muitos
+* Um 
+* Um e apenas um
+* Zero ou muitos 
+* Um ou muitos 
+
+### Tipos de dados 
+* Int 
+* Float
+* char
+* VArchar()
+* Null
 
 
 
