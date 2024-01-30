@@ -87,6 +87,25 @@ Foreign key é utilizado para relacionar duas tabelas diferntes
 * VArchar()
 * Null
 
+## Programação SQL Server 
+Os comndos do SQL SÃO DIVIDIDOS EM TRÊS PARTES 
+
+* DDL 
+* DML
+* DCL
+
+Comandos :
+* create database NomeDoBanco =  Cria um novo banco 
+* use NomeDoBanco = Muda para o bando de dados selecionado
+* drop NomeDoBanco = exclui um banco de dados
+* go =  Trava a execução em uma linha até que todo o código acima seja executado
+* create table NomeDaTabela(NomeColuna1 tipo, NomeColuna2 tipo...) = cria uma tabela 
+* drop table NomeDaTabela = exclui uma tabela 
+* create schema Nome = cria um schema 
+* create table schema.nome = cria uma tabela de um schema criado pelo usuario
+* insert into= insere os dados
+* select from = Busca dados de uma tabela 
+* order by = ordena os dados da maneira selecionada
 
 
 
