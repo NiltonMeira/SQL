@@ -142,3 +142,4 @@ SELECT
 FROM CIDADE C
 GROUP BY C.Cidade, C.Popula��o
 
+sdsds
