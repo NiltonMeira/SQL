@@ -1,15 +1,15 @@
--- Questão 3 ----------------------------------------------------------------------------
+-- Questï¿½o 3 ----------------------------------------------------------------------------
 
-CREATE DATABASE MUNDO -- Criação do database
+CREATE DATABASE MUNDO -- Criaï¿½ï¿½o do database
 
 USE MUNDO
 GO
 
-CREATE TABLE PAIS--Criação das tabelas
+CREATE TABLE PAIS--Criaï¿½ï¿½o das tabelas
 ( 
 	Pais VARCHAR(35) NOT NULL PRIMARY KEY,
 	Continente VARCHAR(35) NOT NULL,
-	População FLOAT NOT NULL,
+	Populaï¿½ï¿½o FLOAT NOT NULL,
 	PIB FLOAT NOT NULL,
 	Expect_Vida FLOAT NOT NULL
 )
@@ -19,7 +19,7 @@ CREATE TABLE CIDADE
 (
 	Cidade VARCHAR(35) NOT NULL PRIMARY KEY,
 	Pais VARCHAR(35) FOREIGN KEY REFERENCES PAIS(Pais),
-	População FLOAT NOT NULL,
+	Populaï¿½ï¿½o FLOAT NOT NULL,
 	Capital BIT NOT NULL
 )
 GO
@@ -33,7 +33,7 @@ CREATE TABLE RIO
 )
 GO
 
-INSERT INTO PAIS VALUES ('Canada', 'America do Norte', 38.25, 1.9, 82) -- Inserção de dados
+INSERT INTO PAIS VALUES ('Canada', 'America do Norte', 38.25, 1.9, 82) -- Inserï¿½ï¿½o de dados
 INSERT INTO PAIS VALUES ('Mexico', 'America do Norte', 126.7, 1.65, 75)
 INSERT INTO PAIS VALUES ('Brasil', 'America do Sul', 214.3, 1.608, 75.5)
 INSERT INTO PAIS VALUES ('USA', 'America do Norte', 331.9, 21.43, 76.1)
@@ -45,7 +45,7 @@ INSERT INTO PAIS VALUES ('Alemanha', 'Europa', 83.2, 4.1, 78.1)
 INSERT INTO CIDADE VALUES ('Washington', 'USA', 3.3, 1)
 INSERT INTO CIDADE VALUES ('Monterrey', 'Mexico', 2.0, 0)
 INSERT INTO CIDADE VALUES ('Brasilia', 'Brasil', 1.5, 1)
-INSERT INTO CIDADE VALUES ('São Paulo', 'Brasil', 15.0,0)
+INSERT INTO CIDADE VALUES ('Sï¿½o Paulo', 'Brasil', 15.0,0)
 INSERT INTO CIDADE VALUES ('Ottawa', 'Canada', 0.8, 1)
 INSERT INTO CIDADE VALUES ('Cid. Mexico', 'Mexico', 14.1, 1)
 INSERT INTO CIDADE VALUES ('Pequim', 'China', 21.5, 1)
@@ -59,7 +59,7 @@ INSERT INTO RIO VALUES ('Mississipi', 'USA', 'USA', 15.0)
 
 -- SELECT * FROM RIO
 
--- Questão 4 ----------------------------------------------------------------------------
+-- Questï¿½o 4 ----------------------------------------------------------------------------
 
 Select 
 	P.Continente,
@@ -68,7 +68,7 @@ Select
 FROM PAIS P
 GROUP BY P.Continente
 
--- Questão 5 ----------------------------------------------------------------------------
+-- Questï¿½o 5 ----------------------------------------------------------------------------
 
 SELECT TOP 1
 	P.Continente,
@@ -80,9 +80,9 @@ ON R.Pais = P.Pais
 
 ORDER BY R.Comprimento DESC
 
--- Questão 6 ----------------------------------------------------------------------------
+-- Questï¿½o 6 ----------------------------------------------------------------------------
 
-CREATE TRIGGER exclusão ON PAIS
+CREATE TRIGGER exclusï¿½o ON PAIS
 INSTEAD OF DELETE
 AS 
 BEGIN 
@@ -93,7 +93,7 @@ BEGIN
 	DELETE FROM PAIS WHERE Pais = @pais_excluido	
 END 
 
--- Questão 7 ----------------------------------------------------------------------------
+-- Questï¿½o 7 ----------------------------------------------------------------------------
 
 CREATE FUNCTION SearchPais (@Nome VARCHAR(35))
 RETURNS TABLE AS 
@@ -101,43 +101,44 @@ RETURN (SELECT * FROM PAIS WHERE Pais LIKE @Nome+'%')
 
 SELECT * FROM SearchPais('Mexi')
 
--- Questão 8 ----------------------------------------------------------------------------
+-- Questï¿½o 8 ----------------------------------------------------------------------------
 
 ALTER TABLE PAIS  
 ADD pib_per_capta FLOAT
 
 UPDATE PAIS
-SET pib_per_capta = PIB/População
+SET pib_per_capta = PIB/Populaï¿½ï¿½o
 
--- Questão 9 ----------------------------------------------------------------------------
+-- Questï¿½o 9 ----------------------------------------------------------------------------
 
 SELECT 
 	P.Pais,
-	p.População,
+	p.Populaï¿½ï¿½o,
 	(SELECT 
-	Case WHEN p.População >= SUM(População) / COUNT(Pais)
-	THEN 'Acima da média'
-	else 'Abaixo da média'	
+	Case WHEN p.Populaï¿½ï¿½o >= SUM(Populaï¿½ï¿½o) / COUNT(Pais)
+	THEN 'Acima da mï¿½dia'
+	else 'Abaixo da mï¿½dia'	
 	END 
 
 	FROM PAIS 
 	)	
 
 FROM PAIS P
-GROUP BY P.Pais, P.População
+GROUP BY P.Pais, P.Populaï¿½ï¿½o
 
 
 SELECT 
 	C.Cidade,
-	C.População,
+	C.Populaï¿½ï¿½o,
 	(SELECT 
-	Case WHEN c.População >= SUM(População) / COUNT(Cidade)
-	THEN 'Acima da média'
-	else 'Abaixo da média'	
+	Case WHEN c.Populaï¿½ï¿½o >= SUM(Populaï¿½ï¿½o) / COUNT(Cidade)
+	THEN 'Acima da mï¿½dia'
+	else 'Abaixo da mï¿½dia'	
 	END 
 
 	FROM CIDADE 
 	)	
 
 FROM CIDADE C
-GROUP BY C.Cidade, C.População
+GROUP BY C.Cidade, C.Populaï¿½ï¿½o
+dssd
